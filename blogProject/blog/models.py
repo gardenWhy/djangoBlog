@@ -25,7 +25,7 @@ class Post(models.Model):
     #文章涉及字段多，需要创建多个列
     
     #文章标题
-    titlt = models.CharField(max_lenth=100)
+    titlt = models.CharField(max_length=100)
     #文章正文，用的是TextField类型，因为正文将会是一大段
     body = models.TextField()
     #创建时间和最后一次修改时间，用的是DateTimeField类型。
