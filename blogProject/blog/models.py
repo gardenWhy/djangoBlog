@@ -1,6 +1,7 @@
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 """
 创建3个表格：文章（Post）、分类（Category）、标签（Tag）
@@ -58,5 +59,11 @@ class Post(models.Model):
     author = models.ForeignKey(User)
     def __str__(self):
         return self.title
+    
+    
+    #自定义get_absolute_url方法
+    #记得从django.urls中导入reverse函数
+    def get_absolute_url(self):
+        return reverse('blog:detail', kwargs={'pk':self.pk})
 
 # Create your models here.
